@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-app';
+  featureSelected: string = '';
+
+  onFeatureSelected(feature) {
+    this.featureSelected = feature === 'recipes' ? 'recipes': 'shopping-list';
+  }
 }

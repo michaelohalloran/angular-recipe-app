@@ -9,7 +9,7 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [
-    new Recipe('Salmon', 'R1', 'https://pixnio.com/free-images/2017/11/05/2017-11-05-07-29-58-1200x800.jpg'),
+    new Recipe('Salmon', 'R1', 'https://www.publicdomainpictures.net/pictures/50000/velka/salmon-with-green-onion.jpg'),
     new Recipe('Cobbler', 'R2', 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Peach_Cobbler_at_City_Hall_Diner.jpg'),
     new Recipe('Sweet potato pie', 'R3', 'https://upload.wikimedia.org/wikipedia/commons/4/49/SweetPotatoPie.jpg'),
   ];
