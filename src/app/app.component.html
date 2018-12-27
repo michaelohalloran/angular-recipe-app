@@ -1,16 +1,13 @@
 <app-header 
-  (featureSelected)="onFeatureSelected($event)"
-  [feature]="featureSelected"
+  (featureSelected)="onNavigate($event)"
 >
 </app-header>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="featureSelected==='recipes'; else shoppingList"></app-recipes>
-      <ng-template #shoppingList>
-        <app-shopping-list></app-shopping-list>
-      </ng-template>
+      <app-recipes *ngIf="featureSelected==='recipe'"></app-recipes>
+      <app-shopping-list *ngIf="featureSelected !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>
