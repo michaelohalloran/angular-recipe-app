@@ -9,20 +9,21 @@ import { Ingredient } from '../../shared/ingredient.model';
 
 export class ShoppingListEditComponent implements OnInit {
 
-    @ViewChild('nameInput') nameInput: ElementRef;
-    @ViewChild('amountInput') amountInput: ElementRef;
-    ingredient: Ingredient;
+    @ViewChild('nameInput') nameInputRef: ElementRef;
+    @ViewChild('amountInput') amountInputRef: ElementRef;
     @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
     constructor() {}
 
     ngOnInit() {}
 
-    addIngredient() {
-        this.ingredient = {
-            name: this.nameInput.nativeElement.value,
-            amount: this.amountInput.nativeElement.value,
-        };
-        this.ingredientAdded.emit(this.ingredient);
+    onAddItem() {
+        const ingName = this.nameInputRef.nativeElement.value;
+        const ingAmount = this.amountInputRef.nativeElement.value;
+        const newIngredient = new Ingredient(ingName, ingAmount);
+        this.ingredientAdded.emit(newIngredient);
+        //clear inputs:
+        this.nameInputRef.nativeElement.value = '';
+        this.amountInputRef.nativeElement.value = '';
     }
 }
