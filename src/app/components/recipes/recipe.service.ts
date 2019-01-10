@@ -43,4 +43,8 @@ export class RecipeService {
         return this.recipes[id];
     }
 
+    addRecipe(recipe: Recipe) {
+        this.recipes.push(recipe);
+    }
+
 }
