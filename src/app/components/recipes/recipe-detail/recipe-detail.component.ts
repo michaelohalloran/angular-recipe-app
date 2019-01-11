@@ -35,9 +35,10 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
-  addToList(ingredients: Ingredient[]) {
+  addToShoppingList(ingredients: Ingredient[]) {
     console.log('ingredients: ', ingredients);
-    ingredients.forEach(ingredient => this.shoppingListService.addIngredient(ingredient));
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+    // ingredients.forEach(ingredient => this.shoppingListService.addIngredient(ingredient));
   }
 
   onDeleteRecipe() {
