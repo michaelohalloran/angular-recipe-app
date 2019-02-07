@@ -41,3 +41,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#local key file
+keys.js
+/src/environments/*
+!/src/environments/environment.example.ts
